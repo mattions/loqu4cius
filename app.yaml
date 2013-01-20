@@ -1,5 +1,5 @@
-application: djappeng1ne
-version: 2
+application: loqu4cious
+version: 1
 runtime: python27
 api_version: 1
 threadsafe: true
