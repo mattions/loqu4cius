@@ -15,11 +15,11 @@ subprocess.call(["./manage.py", "syncdb"])
 ## We get the version from the APP_YAML and increase the version automatically.
 APP_YAML = "app.yaml"
 
-f = open(APP_YAML, 'w')
+f = open(APP_YAML, 'r')
 lines = f.readlines()
 f.close()
 match = re.match("version: (\d+)", lines[1])
-version_number = match.group(1)
+version_number = int(match.group(1))
 version_number += 1
 version_tag = "v{0}".format(version_number)
 
