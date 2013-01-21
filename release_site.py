@@ -22,6 +22,7 @@ match = re.match("version: (\d+)", lines[1])
 version_number = int(match.group(1))
 version_number += 1
 lines[1] = "version: {0}\n".format(version_number)
+f.seek(0) # rewind
 f.writelines(lines)
 f.close()
 
