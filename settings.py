@@ -45,8 +45,8 @@ if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
     DATABASES = {
         'default': {
             'ENGINE': 'google.appengine.ext.django.backends.rdbms',
-            'INSTANCE': 'loqu4cius:instance1',
-            'NAME': 'loqu4cious',
+            'INSTANCE': 'loqu4cious:loqu4cius',
+            'NAME': 'locqu4cius_db',
             }
         }
 else:
