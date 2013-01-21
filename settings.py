@@ -191,6 +191,15 @@ INSTALLED_APPS = (
 
 )
 
+
+NOTIFICATION_LANGUAGE_MODULE = "account.Account"
+
+ACCOUNT_OPEN_SIGNUP = False
+ACCOUNT_REQUIRED_EMAIL = False
+ACCOUNT_EMAIL_VERIFICATION = False
+ACCOUNT_EMAIL_AUTHENTICATION = False
+ACCOUNT_UNIQUE_EMAIL = EMAIL_CONFIRMATION_UNIQUE_EMAIL = True
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.
