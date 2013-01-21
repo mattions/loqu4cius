@@ -1,0 +1,12 @@
+--extra-index-url=http://dist.pinaxproject.com/dev/
+--extra-index-url=http://dist.pinaxproject.com/alpha/
+
+
+-e git://github.com/ssouk/pinax-theme-bootstrap.git@625b7e4fbb0020577f4b5ed047c91321fad0dbf3#egg=pinax_theme_bootstrap-dev
+-e git://github.com/pinax/pinax-theme-bootstrap-account.git@667e71546746c440f46a4dc179cde877ba1c3ab6#egg=pinax_theme_bootstrap_account-dev
+-e git://github.com/pinax/django-user-accounts.git@95c1bcaddc2af7e2e69996f729d7e3cdc259abf5#egg=django_user_accounts-dev
+
+django-forms-bootstrap==2.0.3.post1
+pinax-utils==1.0b1.dev3
+django-crispy-forms==1.2.1
+
