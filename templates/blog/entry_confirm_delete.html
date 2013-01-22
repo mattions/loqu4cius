@@ -1,0 +1,30 @@
+{% extends "site_base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load url from future %}
+{% block head_title %}Add New Post{% endblock %}
+
+{% block extra_head %}
+{{ form.media }}
+{% endblock %}
+
+
+{% block body %}
+
+
+<h2>Delete Entry</h2>
+
+<div class="span12">
+	<form method="post">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<div>
+			<p>Are you sure you want to delete:</p>
+			<p><a href="{% url "entry-detail" entry.slug %}">{{object.title}}</a></p>
+		</div>
+		<div class="form-actions">      
+	        <button type="submit" class="btn btn-primary">{% trans "Yes, Delete" %}</button>
+	    </div>
+	</form>
+</div>
+{% endblock body %}
