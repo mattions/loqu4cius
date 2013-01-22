@@ -1,0 +1,17 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}{{super}}{% endblock head_title %}
+
+{% for entry in object_list %}
+	<h2>{{entry.title}}</h2>
+	<div>
+	{{entry.body}}
+	</div>
+	<div id="author">
+		from {{entry.author}}
+	</div>
+	<div id="published">
+		{{entry.pub_date}}
+	</div>
+	
+{% endfor %} 
