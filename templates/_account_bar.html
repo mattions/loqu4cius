@@ -1,4 +1,10 @@
+{% load url from future %} 
 {% load account_tags %}
+
+<ul class="nav">
+	<li><a href="{% url "entry-create"%}"><i class="icon-pencil"></i> Write post</a></li>
+	
+</ul>
 <ul class="nav pull-right">
     {% if request.user.is_authenticated %}
         <li class="dropdown">
@@ -7,16 +13,16 @@
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="{% url account_settings %}"><i class="icon-user"></i> Settings</a></li>
+                <li><a href="{% url "account_settings" %}"><i class="icon-user"></i> Settings</a></li>
                 <li class="divider"></li>
-                <li><a href="{% url account_logout %}"><i class="icon-off"></i> Log out</a></li>
+                <li><a href="{% url "account_logout" %}"><i class="icon-off"></i> Log out</a></li>
             </ul>
         </li>
     {% else %}
-        <li><a href="{% url account_login %}">Log in</a></li>
+        <li><a href="{% url "account_login" %}">Log in</a></li>
         {% if ACCOUNT_OPEN_SIGNUP %}
             <li class="navbar-text">or</li>
-            <li><a href="{% url account_signup %}">Sign up</a></li>
+            <li><a href="{% url "account_signup" %}">Sign up</a></li>
         {% endif %}
     {% endif %}
 </ul>

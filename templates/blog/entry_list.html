@@ -2,11 +2,10 @@
 
 {% block head_title %}{{super}}{% endblock head_title %}
 
-{% block body %}
-	<h1>Hello!</h1>
+{% block post %}
 	
 	{% for entry in object_list %}
-		<h2>{{entry.title}}</h2>
+		<h1>{{entry.title}}</h1>
 		<div>
 		{{entry.body_text}}
 		</div>
@@ -16,6 +15,6 @@
 		<div id="published">
 			{{entry.pub_date}}
 		</div>
-		{{entry.get_absolute_url}}
+		<a href="{{entry.get_absolute_url}}">Read more &gt;&gt;</a>
 	{% endfor %} 
-{% endblock body %}
+{% endblock post %}

@@ -6,6 +6,34 @@
     {% block extra_head %}{% endblock %}
 {% endblock %}
 
+{% block body_base %}
+    <div class="container">
+    	{% block header %}
+    		<header>
+    			<h1>Rambling Thoughts</h1>
+    		</header>
+    	{% endblock header %}
+        {% include "_messages.html" %}
+        {% block body %}
+        <div class="row">	
+			<div class="span4">
+				{% block sidebar %}
+				<div id="archive">
+					<h4>Archive</h4>
+					
+				</div>
+	        	{% endblock sidebar %}		
+			</div>
+			        	
+	    	<div class="span8">
+	        	{% block post %}
+	        	{% endblock post%}
+	    	</div>
+    	</div>
+        {% endblock body%}
+    </div>
+{% endblock %}
+
 {% block footer %}
     {% include "_footer.html" %}
 {% endblock %}

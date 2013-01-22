@@ -1,5 +1,5 @@
 {% extends "site_base.html" %}
-
+{% load url from future %}
 {% block head_title %}{{entry.title}}{% endblock head_title %}
 
 
@@ -15,6 +15,7 @@
 		<div id="published">
 			{{entry.pub_date}}
 		</div>
-		{{entry.get_absolute_url}}
+		<a href="{% url "entry-update" entry.slug %}">Edit</a> 
+		| <a href="{% url "entry-delete" entry.slug %}">Delete</a> 
 	{% endwith %} 
 {% endblock body %}
