@@ -7,10 +7,9 @@ import re
 print "Changing SETTINGS_MODE changed in prod."
 os.environ['SETTINGS_MODE'] = "prod"
 
-print "Performing remote syncdb and south migration"
+print "Performing remote syncdb"
 
 subprocess.call(["./manage.py", "syncdb"])
-subprocess.call(["./manage.py", "migrate"])
 
 
 ## We get the version from the APP_YAML and increase the version automatically.

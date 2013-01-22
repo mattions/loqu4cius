@@ -189,7 +189,6 @@ INSTALLED_APPS = (
     "account",
     "custom_account",
     "crispy_forms",
-    "south",
     "blog"
 
 )
