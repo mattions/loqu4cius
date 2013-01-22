@@ -29,6 +29,9 @@ handlers:
   script: main.app
   login: admin
 
+- url: /_ah/mail/server
+  script:  handle_incoming_email.app
+
 - url: /.*
   script: main.app
 
