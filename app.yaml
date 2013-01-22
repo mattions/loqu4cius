@@ -31,6 +31,9 @@ handlers:
 - url: /.*
   script: main.app
 
+inbound_services:
+- mail
+
 skip_files:
 - ^(.*/)?app.yaml
 - ^(.*/)?app.yml

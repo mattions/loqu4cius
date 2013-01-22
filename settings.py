@@ -201,7 +201,7 @@ ACCOUNT_EMAIL_VERIFICATION = True
 ACCOUNT_EMAIL_AUTHENTICATION = False
 ACCOUNT_UNIQUE_EMAIL = EMAIL_CONFIRMATION_UNIQUE_EMAIL = True
 
-DEFAULT_FROM_EMAIL = "no-reply@loqu4cius.com"
+DEFAULT_FROM_EMAIL = "no-reply@loqu4cius.appspotmail.com"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
