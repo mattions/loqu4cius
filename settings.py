@@ -49,6 +49,7 @@ if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
             'NAME': 'locqu4cius_db',
             }
         }
+    
 else:
     # Running in development, so use a local MySQL database.
     DATABASES = {
@@ -60,8 +61,8 @@ else:
             'NAME': 'my_db',
             }
         }
-
-
+    
+EMAIL_BACKEND = 'appengine_emailbackend.EmailBackend'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -199,6 +200,8 @@ ACCOUNT_REQUIRED_EMAIL = False
 ACCOUNT_EMAIL_VERIFICATION = False
 ACCOUNT_EMAIL_AUTHENTICATION = False
 ACCOUNT_UNIQUE_EMAIL = EMAIL_CONFIRMATION_UNIQUE_EMAIL = True
+
+DEFAULT_FROM_EMAIL = "no-reply@loqu4cius.com"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
