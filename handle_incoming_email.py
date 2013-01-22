@@ -3,4 +3,4 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-logger.info("Incoming mail received")
+logger.Error("Incoming mail received. We don't read from this e-mail address")
