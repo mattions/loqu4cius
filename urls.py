@@ -6,9 +6,9 @@ admin.autodiscover()
 urlpatterns = patterns(
     '',
     (r'^appengine_sessions/', include('appengine_sessions.urls')),
-    (r'core', include('core.urls')),
-    url('', include('blog.urls')),
+    (r'core/', include('core.urls')),
     url(r"^admin/", include(admin.site.urls)),
     url(r"^account/", include("account.urls")),
+    url('', include('blog.urls')),
 
 )
