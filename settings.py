@@ -192,6 +192,7 @@ INSTALLED_APPS = (
     "crispy_forms",
     "blog",
     "django_wysiwyg",
+    'django_nose'
 )
 
 DJANGO_WYSIWYG_FLAVOR = "ckeditor"
@@ -229,3 +230,13 @@ LOGGING = {
         },
     }
 }
+
+# Use nose to run all tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Tell nose to measure coverage on the 'foo' and 'bar' apps
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=blog',
+    '--cover-html'
+]
