@@ -1,4 +1,4 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, Textarea
 
 from .models import Entry
 
@@ -8,3 +8,6 @@ class EntryForm(ModelForm):
         fields = ["title", 
                   "body_text", 
                   ]
+        widgets = {
+            'body_text': Textarea(),
+        }

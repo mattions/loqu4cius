@@ -12,3 +12,5 @@ django-crispy-forms==1.2.1
 django-braces==0.2.2
 honcho
 watchdog
+html5lib
+django-wysiwyg

@@ -190,10 +190,11 @@ INSTALLED_APPS = (
     "account",
     "custom_account",
     "crispy_forms",
-    "blog"
-
+    "blog",
+    "django_wysiwyg",
 )
 
+DJANGO_WYSIWYG_FLAVOR = "ckeditor"
 
 NOTIFICATION_LANGUAGE_MODULE = "account.Account"
 

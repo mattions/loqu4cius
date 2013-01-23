@@ -5,9 +5,11 @@
 
 {% block post %}
 	{% with entry=object %}
-		<h2>{{entry.title}}</h2>
+		<h1>{{entry.title}}</h1>
 		<div>
-		{{entry.body_text}}
+		{% autoescape off %}
+			{{entry.body_text}}
+		{% endautoescape%}
 		</div>
 		<div id="author">
 			from {{entry.author}}

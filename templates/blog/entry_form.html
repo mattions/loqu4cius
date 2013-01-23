@@ -1,10 +1,11 @@
 {% extends "site_base.html" %}
 {% load crispy_forms_tags %}
 {% load i18n %}
-
 {% block head_title %}Add New Post{% endblock %}
 
 {% block extra_head %}
+{% load wysiwyg %}
+{% wysiwyg_setup %}
 {{ form.media }}
 {% endblock %}
 
@@ -22,5 +23,5 @@
         <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
     </div>
 </form>
-
+{% wysiwyg_editor "id_body_text" %}
 {% endblock post %}
