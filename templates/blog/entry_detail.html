@@ -3,7 +3,7 @@
 {% block head_title %}{{entry.title}}{% endblock head_title %}
 
 
-{% block body %}
+{% block post %}
 	{% with entry=object %}
 		<h2>{{entry.title}}</h2>
 		<div>
@@ -18,4 +18,4 @@
 		<a href="{% url "entry-update" entry.slug %}">Edit</a> 
 		| <a href="{% url "entry-delete" entry.slug %}">Delete</a> 
 	{% endwith %} 
-{% endblock body %}
+{% endblock %}
