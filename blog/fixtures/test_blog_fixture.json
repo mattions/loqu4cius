@@ -1,0 +1,42 @@
+[
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "test", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2013-01-23T17:23:02Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$cwdQg3CUBU7y$43cQYAkQi6L92x7m6ddM8k4viecNDoYwGBA4+qdFzq8=", 
+            "email": "test@example.com", 
+            "date_joined": "2013-01-23T17:23:01Z"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "blog.entry", 
+        "fields": {
+            "pub_date": "2013-01-22T14:35:34Z", 
+            "title": "my First entry", 
+            "body_text": "<p>This is my first entry on the blog</p>\r\n\r\n<p>We test if we keep paragraph or not.</p>\r\n\r\n<p>I thinks it should be ok.</p>\r\n", 
+            "slug": "my-first-entry", 
+            "author": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "blog.entry", 
+        "fields": {
+            "pub_date": "2013-01-23T16:38:07Z", 
+            "title": "sdadsad", 
+            "body_text": "<p>Quick testing of the capability of the software.</p>\r\n\r\n<p>To note, the paragraph are easily writable.</p>\r\n", 
+            "slug": "sdadsad", 
+            "author": 1
+        }
+    }
+]
