@@ -11,6 +11,9 @@ print "Performing remote syncdb"
 
 subprocess.call(["./manage.py", "syncdb"])
 
+print "Collecting static"
+
+subprocess.call(["./manage.py", "collectsstatic", "--noinput"])
 
 ## We get the version from the APP_YAML and increase the version automatically.
 APP_YAML = "app.yaml"
