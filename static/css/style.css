@@ -1,0 +1,10 @@
+/*!
+ * Main File to style the website
+ *
+ */
+#blogtitle {
+  color: #4c7e39;
+  text-align: center;
+  background-color: #d5e9cd;
+  padding: 30px;
+}
