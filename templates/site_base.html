@@ -2,17 +2,24 @@
 
 {% load i18n %}
 
+
+{% block extra_style %}
+
+<link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}css/style.css" />
+
+{% endblock %}
+
 {% block extra_head_base %}
     {% block extra_head %}{% endblock %}
 {% endblock %}
 
 {% block body_base %}
     <div class="container">
-    	{% block header %}
-    		<header>
+    	{% block blogtitle %}
+    		<div id="blogtitle">
     			<h1>Rambling Thoughts</h1>
-    		</header>
-    	{% endblock header %}
+    		</div>
+    	{% endblock blogtitle %}
         {% include "_messages.html" %}
         {% block body %}
         <div class="row">	
