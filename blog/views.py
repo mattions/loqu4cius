@@ -17,7 +17,9 @@ class EntryCreate(LoginRequiredMixin, CreateView):
         return super(EntryCreate, self).form_valid(form)
 
 class EntryUpdate(LoginRequiredMixin, UpdateView):
-    model = Entry
+    model = Entry    
+    form_class = EntryForm
+    template_name = "blog/entry_detail_update.html"
 
 class EntryDelete(LoginRequiredMixin, DeleteView):
     model = Entry

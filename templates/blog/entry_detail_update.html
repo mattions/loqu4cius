@@ -1,0 +1,23 @@
+{% extends "site_base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block head_title %}Add New Post{% endblock %}
+
+{% block extra_head %}
+{{ form.media }}
+{% endblock %}
+
+{% block post %}
+<h2>Update Post</h2>
+
+<div class="span12">
+	<form method="post">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<div class="form-actions">      
+	        <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+	    </div>
+	</form>
+</div>
+{% endblock %}
