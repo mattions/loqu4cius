@@ -11,13 +11,12 @@
 {% block post %}
 <h2>Update Post</h2>
 
-<div class="span12">
-	<form method="post">
-		{% csrf_token %}
-		{{ form|crispy }}
-		<div class="form-actions">      
-	        <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
-	    </div>
-	</form>
-</div>
+<form method="post">
+	{% csrf_token %}
+	{{ form|crispy }}
+	<div class="form-actions">      
+        <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+    </div>
+</form>
+
 {% endblock %}
