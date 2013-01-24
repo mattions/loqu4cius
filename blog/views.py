@@ -47,4 +47,4 @@ class EntryList(ListView):
         if q is None:
             return queryset
         # Return a filtered queryset
-        return queryset.filter(Q(title__icontains=q) | Q(tags__name__contains=q))
+        return queryset.filter(Q(title__icontains=q) | Q(tags__name__contains=q)).distinct()

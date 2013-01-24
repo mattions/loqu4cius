@@ -18,7 +18,7 @@
     <div class="container">
     	{% block blogtitle %}
     		<div id="blogtitle">
-    			<h1>Rambling Thoughts</h1>
+    			<h1>Another Loqu4cius blog</h1>
     		</div>
     	{% endblock blogtitle %}
         {% include "_messages.html" %}
@@ -37,11 +37,14 @@
     	</div>
         {% endblock body%}
     </div>
+    {% block footer %}
+    	{% include "_footer.html" %}
+	{% endblock %}
 {% endblock %}
 
-{% block footer %}
-    {% include "_footer.html" %}
-{% endblock %}
+
+
+
 
 {% block extra_body_base %}
     {% block extra_body %}{% endblock %}

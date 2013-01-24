@@ -9,14 +9,24 @@
 @grayLighter: #eee; // defined in bootstrap. We redefine it just to avoid to import
                     // the bootstrap less which are buried in the pinax-bootstrap-theme
 
-#blogtitle {
-  color: @green;
-  text-align: center;
-  background-color: lighten(@green, 50%);
-  padding: 30px;
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
 }
 
-h1 {
+#blogtitle {
+  color: white;
+  text-align: center;
+  background-color: @green;
+  padding: 30px;
+  .rounded-corners(10px);
+}
+
+h1, h2, h3, h4 {
   font-family: 'Lobster', Georgia, Times, serif;
   font-size: 70px;
   line-height: 100px;
@@ -26,4 +36,24 @@ h1 {
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 25px;
+}
+
+.tag a {
+  color: white;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: @green;
+  .rounded-corners(6px);
+  
+}
+
+.hr {
+  
+}
+
+.legal {
+  text-align: center;
+  color: darken(@grayLighter, 40);
 }

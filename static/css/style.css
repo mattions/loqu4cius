@@ -3,12 +3,20 @@
  *
  */
 #blogtitle {
-  color: #4c7e39;
+  color: white;
   text-align: center;
-  background-color: #d5e9cd;
+  background-color: #4c7e39;
   padding: 30px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
 }
-h1 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Lobster', Georgia, Times, serif;
   font-size: 70px;
   line-height: 100px;
@@ -17,4 +25,21 @@ h1 {
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 25px;
+}
+.tag a {
+  color: white;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #4c7e39;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+}
+.legal {
+  text-align: center;
+  color: #888888;
 }

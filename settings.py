@@ -151,6 +151,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.contrib.messages.context_processors.messages",
     "pinax_utils.context_processors.settings",
     "account.context_processors.account",
+    "blog.context_processors.get_disqus_shortname"
 ]
 
 MIDDLEWARE_CLASSES = (
@@ -200,6 +201,13 @@ DJANGO_WYSIWYG_FLAVOR = "ckeditor"
 
 NOTIFICATION_LANGUAGE_MODULE = "account.Account"
 
+ugettext = lambda s: s
+
+LANGUAGES = (
+    ('en', ugettext('English')),
+)
+DEFAULT_LANGUAGE = 1
+
 LOGIN_URL = "/account/login/"
 ACCOUNT_OPEN_SIGNUP = True
 ACCOUNT_REQUIRED_EMAIL = True
@@ -208,6 +216,8 @@ ACCOUNT_EMAIL_AUTHENTICATION = False
 ACCOUNT_UNIQUE_EMAIL = EMAIL_CONFIRMATION_UNIQUE_EMAIL = True
 
 DEFAULT_FROM_EMAIL = "server@loqu4cius.appspotmail.com"
+
+DISQUS_SHORTNAME = "loqu4cius"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -231,3 +241,4 @@ LOGGING = {
         },
     }
 }
+

@@ -1,22 +1,14 @@
 {% extends "site_base.html" %}
-
-{% block head_title %}{{super}}{% endblock head_title %}
+{% load url from future %}
+{% block head_title %}{{super}} Another Loqu4cius blog {% endblock head_title %}
 
 {% block post %}
 	
 	{% for entry in object_list %}
-		<h1>{{entry.title}}</h1>
+		{% include "blog/_entry.html"%}
 		<div>
-		{% autoescape off %}
-			{{entry.body_text}}
-		{% endautoescape%}
+			<a href="{{entry.get_absolute_url}}">Read more &gt;&gt;</a>
 		</div>
-		<div id="author">
-			from {{entry.author}}
-		</div>
-		<div id="published">
-			{{entry.pub_date}}
-		</div>
-		<a href="{{entry.get_absolute_url}}">Read more &gt;&gt;</a>
+		<hr/>
 	{% endfor %} 
 {% endblock post %}

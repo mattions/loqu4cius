@@ -12,7 +12,9 @@
 <div id="tag-cloud">
 	{% get_tagcloud as tags for 'blog' %}
 	{% for tag in tags %}
+	<span class="tag">
 		<font size={{tag.weight|floatformat:0}}><a href='{% url "entry-list" %}?q={{tag}}'>{{tag}}</a></font>
+	</span>
 	{% endfor %}
 	
 </div>

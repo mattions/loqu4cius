@@ -1,0 +1,20 @@
+{% load url from future %}
+<h1>{{entry.title}}</h1>
+<div id="body_text">
+	{% autoescape off %}
+		{{entry.body_text}}
+	{% endautoescape%}
+</div>
+<div id="tags-list">
+	{% for tag in entry.tags.all %}
+		<span class="tag"><a href='{% url "entry-list" %}?q={{tag}}'>{{tag}}</a></span>
+	{% endfor %}
+</div>
+<div class="row">
+	<div id="author" class="span3">
+		<i class="icon-user"></i> {{entry.author}}
+	</div>
+	<div id="published" class="span3">
+		<i class=" icon-time"></i> {{entry.pub_date}}
+	</div>
+</div>
