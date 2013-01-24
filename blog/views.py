@@ -38,7 +38,8 @@ class EntryDetail(DetailView):
     model = Entry
 
 class EntryList(ListView):
-    model = Entry
+    
+    queryset = Entry.objects.order_by("-pub_date")
     
     def get_queryset(self):
         
