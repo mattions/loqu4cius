@@ -1,4 +1,4 @@
-# A streamlined Django 1.4 and App Engine integration.
+# A Lightweight blog engine, using Django 1.4 and App Engine.
 
 ## Requirements
 
@@ -8,41 +8,48 @@ Google Appengine Python SDK 1.7.3+
 
 Run locally:
 
-    git clone git@github.com:potatolondon/djappengine.git
-    cd djappengine
+    git clone https://github.com/mattions/loqu4cius.git
+    cd loqu4cius
     ./serve.sh
 
 Visit <http://localhost:8080> to marvel at your work.
 
-Now deploy to appspot, first set up an app on <http://appengine.google.com> and replace `application` in `app.yaml` with the name of your app (in your text editor or like this):
+## Deploy
+
+Create a CloudSQL instance and database https://developers.google.com/cloud-sql/, 
+and adjust the database in settings.py
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'google.appengine.ext.django.backends.rdbms',
+            'INSTANCE': 'loqu4cious:loqu4cius', # Change-me
+            'NAME': 'locqu4cius_db', # Change-me
+            }
+        }
+
+Change the name of the instance with your appspot id. 
+First set up an app on <http://appengine.google.com> and replace 
+`application` in `app.yaml` with the name of your app (in your text editor or like this):
 
     sed -i '' 's/djappeng1ne/myappid/' app.yaml
 
 You're ready to deploy:
 
-    appcfg.py update .
+	./release_site.py
+	
+Note: `release_site.py` automatically uploads the site, runs "./manage.py syncdb" in production
+increase the version number by one, commits the changes to the repo and tag the code with the 
+version.
 
-The Django app in `core` is there to get you started. Have a look around.
-
-## Local shell
-
-With your local server stopped, open a python shell and play with your local data:
-
-    ./shell
 
 ## Running tests
 
-    python manage.py test core
+    python manage.py test blog
     .
     ----------------------------------------------------------------------
     Ran 1 test in 0.000s
 
-djappengine uses a custom test runner that doesn't try to use a database. This is because djappengine is designed primarily to be used with 
-[App Engine's models](https://developers.google.com/appengine/docs/python/datastore/datamodeling), and not with Django's ORM. If you're using
-CloudSQL, comment out the [TEST_RUNNER](https://github.com/potatolondon/djappengine/blob/master/settings.py#L29) line in `settings.py`.
 
-[core/tests.py](https://github.com/potatolondon/djappengine/blob/master/core/tests.py) is an example test that sets App Engine's 
-[testbed](https://developers.google.com/appengine/docs/python/tools/localunittesting).
 
 ## So what's going on?
 
@@ -65,24 +72,18 @@ CloudSQL, comment out the [TEST_RUNNER](https://github.com/potatolondon/djappeng
 
 - Usual Django defaults
 - Sets the `SESSION_ENGINE` to a custom memcache/datastore session backend
+- settings.BLOG_NAME, and settings.DISQUS_SHORTNAME sets respectevely the BLOG_NAME 
+  and the DISQUS_SHORTNAME used for the comments on the entry.
 
 ### lib/environ.py
 
-- Uses various internal SDK functions to set up the system environment in such a way that things will run in the context of Appengine's service stubs
+- Uses various internal SDK functions to set up the system environment in such a way 
+  that things will run in the context of Appengine's service stubs
 
 ### lib/memcache.py
 
 - So App Engine's memcache is seen by django
 
-### lib/testrunnernodb.py
+## blog
 
-- A custom test runner that lets you use Django's simple test runner to run tests with [App Engine's testbed](https://developers.google.com/appengine/docs/python/tools/localunittesting) and without a database.
-
-### core
-
-- A simple example app to get you started
-
-
-## What's missing
-
-Something missing? [please raise an issue](https://github.com/potatolondon/djappengine/issues?state=open).
+- The app that runs the blog 

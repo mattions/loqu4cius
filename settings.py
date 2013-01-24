@@ -151,7 +151,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.contrib.messages.context_processors.messages",
     "pinax_utils.context_processors.settings",
     "account.context_processors.account",
-    "blog.context_processors.get_disqus_shortname"
+    "blog.context_processors.blog_settings",
 ]
 
 MIDDLEWARE_CLASSES = (
@@ -215,10 +215,6 @@ ACCOUNT_EMAIL_VERIFICATION = True
 ACCOUNT_EMAIL_AUTHENTICATION = False
 ACCOUNT_UNIQUE_EMAIL = EMAIL_CONFIRMATION_UNIQUE_EMAIL = True
 
-DEFAULT_FROM_EMAIL = "server@loqu4cius.appspotmail.com"
-
-DISQUS_SHORTNAME = "loqu4cius"
-
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.
@@ -242,3 +238,8 @@ LOGGING = {
     }
 }
 
+## Loquacius specific settings
+
+DEFAULT_FROM_EMAIL = "server@loqu4cius.appspotmail.com"
+DISQUS_SHORTNAME = "loqu4cius"
+BLOG_NAME = "Another Loqu4cius blog :)"
