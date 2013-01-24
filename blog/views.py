@@ -3,6 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.dates import MonthArchiveView
 from django.utils.timezone import now
 from django.db.models import Q
+from django.conf import settings 
 
 from braces.views import LoginRequiredMixin
 import django_wysiwyg
