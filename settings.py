@@ -238,8 +238,15 @@ LOGGING = {
     }
 }
 
-## Loquacius specific settings
+# Max weight for the tag cloud
+TAGGIT_TAGCLOUD_MAX = 4.0
 
-DEFAULT_FROM_EMAIL = "server@loqu4cius.appspotmail.com"
-DISQUS_SHORTNAME = "loqu4cius"
+## The blog Name (used also for the title
 BLOG_NAME = "Another Loqu4cius blog :)"
+
+## Email address, used when a user register
+DEFAULT_FROM_EMAIL = "server@loqu4cius.appspotmail.com"
+
+## Disuqs shortname, for the comments. Get one at disqus.com 
+DISQUS_SHORTNAME = "loqu4cius"
+ 
