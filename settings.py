@@ -192,6 +192,8 @@ INSTALLED_APPS = (
     "crispy_forms",
     "blog",
     "django_wysiwyg",
+    "taggit",
+    "taggit_templatetags"
 )
 
 DJANGO_WYSIWYG_FLAVOR = "ckeditor"

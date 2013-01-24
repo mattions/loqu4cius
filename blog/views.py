@@ -2,6 +2,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.dates import MonthArchiveView
 from django.utils.timezone import now
+from django.db.models import Q
 
 from braces.views import LoginRequiredMixin
 import django_wysiwyg
@@ -46,11 +47,4 @@ class EntryList(ListView):
         if q is None:
             return queryset
         # Return a filtered queryset
-        return queryset.filter(title__icontains=q)
-
-    
-class EntryMonthArchiveView(MonthArchiveView):
-    model = Entry
-    date_field='pub_date'
-    make_object_list = True
-    allow_future = True
+        return queryset.filter(Q(title__icontains=q) | Q(tags__name__contains=q))

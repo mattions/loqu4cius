@@ -1,3 +1,4 @@
+{% load taggit_extras %}
 {% load url from future %}
 <div id="Search">
 	<form class="form-search" action="{% url "entry-list" %}" method="GET">
@@ -7,4 +8,11 @@
 			<button type="submit" class="btn"><i class="icon-search"></i></button>
 		</fieldset>
 	</form>
+</div>
+<div id="tag-cloud">
+	{% get_tagcloud as tags for 'blog' %}
+	{% for tag in tags %}
+		<font size={{tag.weight|floatformat:0}}><a href='{% url "entry-list" %}?q={{tag}}'>{{tag}}</a></font>
+	{% endfor %}
+	
 </div>

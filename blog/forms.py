@@ -7,6 +7,7 @@ class EntryForm(ModelForm):
         model = Entry
         fields = ["title", 
                   "body_text", 
+                  "tags"
                   ]
         widgets = {
             'body_text': Textarea(),

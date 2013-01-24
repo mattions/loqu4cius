@@ -4,12 +4,15 @@ from django.template.defaultfilters import slugify
 from django.core.urlresolvers import reverse
 from django import forms
 
+from taggit.managers import TaggableManager
+
 class Entry(models.Model):
     author = models.ForeignKey(User)
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
     body_text = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
+    tags = TaggableManager()
 
     def __unicode__(self):
         return self.title
