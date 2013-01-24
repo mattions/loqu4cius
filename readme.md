@@ -10,9 +10,21 @@ Run locally:
 
     git clone https://github.com/mattions/loqu4cius.git
     cd loqu4cius
-    ./serve.sh
+    
+Change the development database with your MySql database, 
+create a virtualenviroment and install all the required package
 
-Visit <http://localhost:8080> to marvel at your work.
+	pip install -r requirements.txt
+	
+Sync the db
+
+	./manage.py syncdb
+
+Launch the server with honcho
+
+	honcho -f Procfile.dev start
+
+Visit <http://localhost:8080> to check it out 
 
 ## Deploy
 
@@ -29,61 +41,40 @@ and adjust the database in settings.py
 
 Change the name of the instance with your appspot id. 
 First set up an app on <http://appengine.google.com> and replace 
-`application` in `app.yaml` with the name of your app (in your text editor or like this):
-
-    sed -i '' 's/djappeng1ne/myappid/' app.yaml
+`application` in `app.yaml` with the name of your app:
 
 You're ready to deploy:
 
 	./release_site.py
 	
-Note: `release_site.py` automatically uploads the site, runs "./manage.py syncdb" in production
+Note: `release_site.py` automatically uploads the site, runs `./manage.py syncdb` in production
 increase the version number by one, commits the changes to the repo and tag the code with the 
 version.
 
 
 ## Running tests
 
-    python manage.py test blog
-    .
-    ----------------------------------------------------------------------
-    Ran 1 test in 0.000s
-
+	Creating test database for alias 'default'...
+	..
+	----------------------------------------------------------------------
+	Ran 2 tests in 0.222s
+	
+	OK
+	Destroying test database for alias 'default'...
 
 
 ## So what's going on?
 
-### app.yaml
+The main structure of the project is similar to https://github.com/potatolondon/djappengine
+Check that readme for more info.
 
-- Sets up static resources
-- Points all other paths to the WSGI app
+## Loqu4cius specific settings
 
-### main.py
+#### settings.py
 
-- Sets the `DJANGO_SETTINGS_MODULE` environment var
-- Routes logging for production
-- Defines the WSGI app
+- settings.BLOG_NAME is used to set the blog name and title
+- and settings.DISQUS_SHORTNAME is used to integrate the disqus comments
 
-### manage.py
-
-- Uses path-fixing mechanisms in order for tests to run properly
-
-### settings.py
-
-- Usual Django defaults
-- Sets the `SESSION_ENGINE` to a custom memcache/datastore session backend
-- settings.BLOG_NAME, and settings.DISQUS_SHORTNAME sets respectevely the BLOG_NAME 
-  and the DISQUS_SHORTNAME used for the comments on the entry.
-
-### lib/environ.py
-
-- Uses various internal SDK functions to set up the system environment in such a way 
-  that things will run in the context of Appengine's service stubs
-
-### lib/memcache.py
-
-- So App Engine's memcache is seen by django
-
-## blog
+### blog
 
 - The app that runs the blog 
