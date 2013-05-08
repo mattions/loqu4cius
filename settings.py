@@ -39,12 +39,15 @@ SESSION_ENGINE = "appengine_sessions.backends.cached_db"
 # Uncomment these DB definitions to use Cloud SQL.
 # See: https://developers.google.com/cloud-sql/docs/django#development-settings
 import os
-if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
-    os.getenv('SETTINGS_MODE') == 'prod'):
+DATABASES = {
+ 'default' : {}            
+ }
+#if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
+#    os.getenv('SETTINGS_MODE') == 'prod'):
     # Running on production App Engine, so use a Google Cloud SQL database.
-    DATABASES = {
-     'default' : {}            
-     }
+#    DATABASES = {
+#     'default' : {}            
+#     }
 #    DATABASES = {
 #        'default': {
 #            'ENGINE': 'google.appengine.ext.django.backends.rdbms',
@@ -53,17 +56,17 @@ if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
 #            }
 #        }
     
-else:
-    # Running in development, so use a local MySQL database.
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'USER': 'root',
-            'PASSWORD': '',
-            'HOST': 'localhost',
-            'NAME': 'my_db',
-            }
-        }
+#else:
+#    # Running in development, so use a local MySQL database.
+#    DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.mysql',
+#            'USER': 'root',
+#            'PASSWORD': '',
+#            'HOST': 'localhost',
+#            'NAME': 'my_db',
+#            }
+#        }
     
 EMAIL_BACKEND = 'appengine_emailbackend.EmailBackend'
 
@@ -144,25 +147,25 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = [
-    "django.contrib.auth.context_processors.auth",
-    "django.core.context_processors.debug",
-    "django.core.context_processors.i18n",
-    "django.core.context_processors.media",
+    #"django.contrib.auth.context_processors.auth",
+    #"django.core.context_processors.debug",
+    #"django.core.context_processors.i18n",
+    #"django.core.context_processors.media",
     "django.core.context_processors.static",
-    "django.core.context_processors.tz",
-    "django.core.context_processors.request",
-    "django.contrib.messages.context_processors.messages",
-    "pinax_utils.context_processors.settings",
-    "account.context_processors.account",
+    #"django.core.context_processors.tz",
+    #"django.core.context_processors.request",
+    #"django.contrib.messages.context_processors.messages",
+    #"pinax_utils.context_processors.settings",
+    #"account.context_processors.account",
     "blog.context_processors.blog_settings",
 ]
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    #'django.middleware.common.CommonMiddleware',
+    #'django.contrib.sessions.middleware.SessionMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.contrib.auth.middleware.AuthenticationMiddleware',
+    #'django.contrib.messages.middleware.MessageMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
