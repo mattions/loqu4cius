@@ -9,6 +9,7 @@ urlpatterns = patterns(
     (r'core/', include('core.urls')),
     url(r"^admin/", include(admin.site.urls)),
     url(r"^account/", include("account.urls")),
-    url('', include('blog.urls')),
+    url('', TemplateView.as_view(template_name="about.html")),
+    url('blog/', include('blog.urls')),
 
 )
