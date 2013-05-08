@@ -1,0 +1,135 @@
+Warning: django 1.4 not recognised by dist, fixing python path
+[
+  {
+    "pk": 6, 
+    "model": "blog.entry", 
+    "fields": {
+      "pub_date": "2013-01-22T14:35:34Z", 
+      "title": "my First entry", 
+      "body_text": "<p>This is my first entry on the blog</p>\r\n\r\n<p>We test if we keep paragraph or not.</p>\r\n\r\n<p><strong>I thinks it should be ok.</strong></p>\r\n", 
+      "slug": "my-first-entry", 
+      "author": 1
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "blog.entry", 
+    "fields": {
+      "pub_date": "2013-01-23T16:38:07Z", 
+      "title": "sdadsad", 
+      "body_text": "<p>Quick testing of the capability of the software.</p>\r\n\r\n<p>To note, the paragraph are easily writable.</p>\r\n", 
+      "slug": "sdadsad", 
+      "author": 1
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "taggit.tag", 
+    "fields": {
+      "name": "yes", 
+      "slug": "yes"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "taggit.tag", 
+    "fields": {
+      "name": "mytag", 
+      "slug": "mytag"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "taggit.tag", 
+    "fields": {
+      "name": "first", 
+      "slug": "first"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "taggit.tag", 
+    "fields": {
+      "name": "ohyeah", 
+      "slug": "ohyeah"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "taggit.tag", 
+    "fields": {
+      "name": "giraffe", 
+      "slug": "giraffe"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "taggit.tag", 
+    "fields": {
+      "name": "kangoroo", 
+      "slug": "kangoroo"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "taggit.tag", 
+    "fields": {
+      "name": "elephant", 
+      "slug": "elephant"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+      "tag": 1, 
+      "content_type": 16, 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+      "tag": 2, 
+      "content_type": 16, 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+      "tag": 3, 
+      "content_type": 16, 
+      "object_id": 6
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+      "tag": 5, 
+      "content_type": 16, 
+      "object_id": 7
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+      "tag": 6, 
+      "content_type": 16, 
+      "object_id": 7
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "taggit.taggeditem", 
+    "fields": {
+      "tag": 7, 
+      "content_type": 16, 
+      "object_id": 7
+    }
+  }
+]
