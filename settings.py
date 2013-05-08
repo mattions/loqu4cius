@@ -42,7 +42,9 @@ import os
 if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
     os.getenv('SETTINGS_MODE') == 'prod'):
     # Running on production App Engine, so use a Google Cloud SQL database.
-    DATABASES = {}
+    DATABASES = {
+     'default' : {}            
+     }
 #    DATABASES = {
 #        'default': {
 #            'ENGINE': 'google.appengine.ext.django.backends.rdbms',
