@@ -42,13 +42,14 @@ import os
 if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
     os.getenv('SETTINGS_MODE') == 'prod'):
     # Running on production App Engine, so use a Google Cloud SQL database.
-    DATABASES = {
-        'default': {
-            'ENGINE': 'google.appengine.ext.django.backends.rdbms',
-            'INSTANCE': 'loqu4cious:loqu4cius',
-            'NAME': 'locqu4cius_db',
-            }
-        }
+    DATABASES = {}
+#    DATABASES = {
+#        'default': {
+#            'ENGINE': 'google.appengine.ext.django.backends.rdbms',
+#            'INSTANCE': 'loqu4cious:loqu4cius',
+#            'NAME': 'locqu4cius_db',
+#            }
+#        }
     
 else:
     # Running in development, so use a local MySQL database.
